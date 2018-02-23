@@ -3,11 +3,29 @@ package com.hibernateex.entities;
 
 import java.util.Set;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "groups")
 public class Group {
 
+	@Id
+	@GeneratedValue
+	@Column(name = "groupid")
 	private int groupid;
+	
+	@Column(name = "title")
 	private String title;
+	
+	@Column(name = "level")
 	private String level;
+	
+	@OneToMany(mappedBy="group")
 	private Set<User> user;
 
 	public int getGroupid() {
