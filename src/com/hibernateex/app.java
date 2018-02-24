@@ -3,12 +3,14 @@ package com.hibernateex;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.hibernateex.dao.Controller;
+import com.hibernateex.controller.GroupController;
+import com.hibernateex.controller.UserController;
 import com.hibernateex.dao.GroupDAO;
 import com.hibernateex.dao.IUserDAO;
 import com.hibernateex.dao.UserDAO;
 import com.hibernateex.entities.Group;
 import com.hibernateex.entities.User;
+import com.hibernateex.service.GroupService;
 
 public class app {
 
@@ -62,8 +64,11 @@ public class app {
 //		IUserDAO iUserDAO = (IUserDAO) Context.getBean("iUserDAO");
 //		iUserDAO.getAllUser();
 		
-		Controller controller =(Controller) Context.getBean("controller");
-		controller.getAllGroup();
+		UserController controller =(UserController) Context.getBean("userController");
+		controller.getAllUser();
+		
+		GroupController groupController =(GroupController) Context.getBean("groupController");
+		groupController.getAllGroup();
 		
 		
 
