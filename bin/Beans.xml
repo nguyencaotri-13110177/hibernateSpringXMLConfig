@@ -26,7 +26,6 @@
 		<property name="dataSource" ref="dataSource" />
 		<property name="annotatedClasses">
 			<list>
-				<value>com.hibernateex.entities.Employee</value>
 				<value>com.hibernateex.entities.Group</value>
 				<value>com.hibernateex.entities.User</value>
 			</list>
@@ -51,5 +50,7 @@
 		<property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
 	</bean>
 -->
+
+
 
 </beans>

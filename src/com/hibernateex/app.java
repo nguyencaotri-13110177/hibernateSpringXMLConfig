@@ -3,16 +3,15 @@ package com.hibernateex;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.hibernateex.dao.EmployeeDAO;
+import com.hibernateex.dao.Controller;
 import com.hibernateex.dao.GroupDAO;
+import com.hibernateex.dao.IUserDAO;
 import com.hibernateex.dao.UserDAO;
-import com.hibernateex.entities.Employee;
 import com.hibernateex.entities.Group;
 import com.hibernateex.entities.User;
 
 public class app {
 
-	// private static SessionFactory factory;
 
 	public static void main(String[] args) {
 
@@ -57,11 +56,16 @@ public class app {
 		// //groupdao.create(group1);
 
 		ApplicationContext Context = new ClassPathXmlApplicationContext("Beans.xml");
-		UserDAO userDAO = (UserDAO) Context.getBean("userDAO");
-		userDAO.getAllUser();
+//		UserDAO userDAO = (UserDAO) Context.getBean("userDAO");
+//		userDAO.getAllUser();
 		
-		EmployeeDAO employeeDAO = (EmployeeDAO) Context.getBean("employeeDAO");
-		employeeDAO.listEmployees();
+//		IUserDAO iUserDAO = (IUserDAO) Context.getBean("iUserDAO");
+//		iUserDAO.getAllUser();
+		
+		Controller controller =(Controller) Context.getBean("controller");
+		controller.getAllGroup();
+		
+		
 
 	}
 
